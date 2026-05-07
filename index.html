@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kazakh Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="stage" aria-label="Exercice">
+        <div class="topbar">
+          <div class="brand">kazakh</div>
+          <div class="switcher" role="tablist" aria-label="Modes">
+            <button class="chip is-active" data-mode="alphabet" role="tab" aria-selected="true">alphabet</button>
+            <button class="chip" data-mode="words" role="tab" aria-selected="false">mots</button>
+          </div>
+        </div>
+
+        <div class="sizebar" aria-label="Taille de l'exercice">
+          <button class="sizebtn" id="sizeDown" type="button" aria-label="Réduire la taille">−</button>
+          <input id="sizeRange" class="sizerange" type="range" min="0.8" max="1.35" step="0.05" value="1" aria-label="Taille de la lettre ou du mot" />
+          <button class="sizebtn" id="sizeUp" type="button" aria-label="Agrandir la taille">+</button>
+        </div>
+
+        <div class="prompt-wrap">
+          <div class="prompt-meta" id="promptMeta">alphabet</div>
+          <div class="prompt" id="prompt">А</div>
+        </div>
+
+        <form class="answer-row" id="answerForm" autocomplete="off">
+          <input id="answerInput" type="text" inputmode="latin" spellcheck="false" autocapitalize="none" autocomplete="off" aria-label="Réponse" />
+          <button class="go" type="submit" aria-label="Valider">enter</button>
+        </form>
+
+        <div class="statusline">
+          <div class="feedback" id="feedback"> </div>
+          <div class="score" id="score">streak 0</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
