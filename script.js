@@ -117,7 +117,7 @@ function updateScore() {
 }
 
 function setScale(nextScale) {
-  const clamped = Math.min(1.35, Math.max(0.8, nextScale));
+  const clamped = Math.min(1.35, Math.max(0.5, nextScale));
   stage.style.setProperty("--prompt-scale", String(clamped));
   sizeRange.value = String(clamped);
 }

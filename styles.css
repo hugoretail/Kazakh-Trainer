@@ -111,22 +111,31 @@ body::before {
   align-items: center;
   justify-content: start;
   width: fit-content;
-  padding: 8px 10px;
-  border: 1px solid var(--line);
+  padding: 5px 8px;
+  border: 1px solid rgba(16, 17, 20, 0.08);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  opacity: 0.58;
+  transition: opacity 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.sizebar:hover,
+.sizebar:focus-within {
+  opacity: 0.92;
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(16, 17, 20, 0.14);
 }
 
 .sizebtn {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border: 0;
   border-radius: 50%;
   background: rgba(16, 17, 20, 0.9);
   color: #f7f2e8;
   font: inherit;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1;
   cursor: pointer;
 }
@@ -175,12 +184,13 @@ body::before {
 }
 
 .prompt {
-  font-size: clamp(4rem, calc(18vw * var(--prompt-scale)), 8.8rem);
+  font-size: clamp(2.6rem, 10vw, 7rem);
   line-height: 0.92;
   letter-spacing: 0.02em;
   font-weight: 700;
   text-wrap: balance;
-  transform: rotate(-2deg);
+  transform: scale(var(--prompt-scale));
+  transform-origin: center;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
